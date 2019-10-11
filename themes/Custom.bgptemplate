@@ -14,6 +14,7 @@ override_git_prompt_colors() {
   # GIT_PROMPT_SEPARATOR="|"              # separates each item
 
   # GIT_PROMPT_BRANCH="${Magenta}"        # the git branch that is active in the current directory
+  GIT_PROMPT_BRANCH="${Green}"        # the git branch that is active in the current directory
   # GIT_PROMPT_MASTER_BRANCH="${GIT_PROMPT_BRANCH}" # used if the git branch that is active in the current directory is $GIT_PROMPT_MASTER_BRANCHES
   # GIT_PROMPT_STAGED="${Red}●"           # the number of staged files/directories
   # GIT_PROMPT_CONFLICTS="${Red}✖ "       # the number of files in conflict
@@ -45,8 +46,10 @@ override_git_prompt_colors() {
 
   ## _LAST_COMMAND_INDICATOR_ will be replaced by the appropriate GIT_PROMPT_COMMAND_OK OR GIT_PROMPT_COMMAND_FAIL
   # GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${Yellow}${PathShort}${ResetColor}"
+  GIT_PROMPT_START_USER="_LAST_COMMAND_INDICATOR_ ${White}$USER@$(echo $HOSTNAME | cut -f1 -d.) ${PathShort}${ResetColor}"
   # GIT_PROMPT_START_ROOT="_LAST_COMMAND_INDICATOR_ ${GIT_PROMPT_START_USER}"
   # GIT_PROMPT_END_USER=" \n${White}${Time12a}${ResetColor} $ "
+  GIT_PROMPT_END_USER="${ResetColor} $ "
   # GIT_PROMPT_END_ROOT=" \n${White}${Time12a}${ResetColor} # "
 
   ## Please do not add colors to these symbols
